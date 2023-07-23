@@ -31,4 +31,36 @@ const validateCardHolderName = (name) => {
   return regex.test(name);
 };
 
-module.exports = { validateCreditCardNumber, validateCardHolderName };
+const validateExpirationDate = (date) => {
+  // MM/YY or MM/YYYY
+  const regex = /^(0[1-9]|1[0-2])\/((\d{2})|(\d{4}))$/;
+  if (!regex.test(date)) {
+    return false;
+  }
+
+  // Compare current date with the expiration date
+  const currentDate = new Date();
+  const currentYear = currentDate.getFullYear() % 100; // Get last two digits of the current year
+  const currentMonth = currentDate.getMonth() + 1; // Months start from 0, so we add 1
+
+  // Parse the expiration date parts
+  const [inputMonth, inputYear] = date.split("/");
+  const expirationYear = parseInt(inputYear);
+  const expirationMonth = parseInt(inputMonth);
+
+  // Validate the expiration date
+  if (
+    expirationYear < currentYear ||
+    (expirationYear === currentYear && expirationMonth < currentMonth)
+  ) {
+    return false; // Card has expired
+  }
+
+  return true;
+};
+
+module.exports = {
+  validateCreditCardNumber,
+  validateCardHolderName,
+  validateExpirationDate,
+};
