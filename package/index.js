@@ -59,8 +59,15 @@ const validateExpirationDate = (date) => {
   return true;
 };
 
+const validateSecurityCode = (code) => {
+  // 3 or 4 digit number
+  const regex = /^\d{3,4}$/;
+  return regex.test(code);
+};
+
 module.exports = {
   validateCreditCardNumber,
   validateCardHolderName,
   validateExpirationDate,
+  validateSecurityCode,
 };
