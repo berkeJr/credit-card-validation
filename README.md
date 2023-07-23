@@ -1,1 +1,3 @@
-# credit-card-validation
+# Credit Card Validation - NPM Package
+
+
