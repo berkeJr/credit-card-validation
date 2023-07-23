@@ -25,4 +25,10 @@ const validateCreditCardNumber = (input) => {
   return total % 10 === 0;
 };
 
-module.exports = { validateCreditCardNumber }
+const validateCardHolderName = (name) => {
+  // Card holder name should not be empty and should only contain letters and spaces
+  const regex = /^[A-Za-z\s]+$/;
+  return regex.test(name);
+};
+
+module.exports = { validateCreditCardNumber, validateCardHolderName };
