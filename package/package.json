@@ -1,0 +1,22 @@
+{
+  "name": "credit-card-validator-brk",
+  "version": "1.0.0",
+  "description": "Credit Card Validation with Luhn Algorithm",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/berkeJr/credit-card-validation.git"
+  },
+  "keywords": [
+    "Card"
+  ],
+  "author": "Berke Sayin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/berkeJr/credit-card-validation/issues"
+  },
+  "homepage": "https://github.com/berkeJr/credit-card-validation#readme"
+}
